@@ -23,3 +23,5 @@ ec2_specs = {
 }
 
 deploy_conditional = false
+
+ingress_port_list = [22, 80, 443]

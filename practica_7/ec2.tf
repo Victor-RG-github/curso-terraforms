@@ -1,7 +1,8 @@
 variable "instances" {
   description = "List of instance names"
   type        = list(string)
-  default     = ["apache", "mysql", "jumpserver"]
+  //default     = ["apache", "mysql", "jumpserver"]
+  default = ["apache"]
 }
 
 

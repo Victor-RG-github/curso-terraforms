@@ -40,3 +40,8 @@ variable "deploy_conditional" {
   type        = bool
   default     = false
 }
+
+variable "ingress_port_list" {
+  description = "Ingress ports enabled"
+  type        = list(number)
+}
