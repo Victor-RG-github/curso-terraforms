@@ -7,7 +7,7 @@ resource "aws_instance" "public_instance" {
   tags = {
     Name = "Public instance"
   }
-  user_data = file("scripts/user_data.sh")
+  user_data = file("scripts/user_data.sh") // Esto ejecuta en remoto el contenido de ese script al deployar
 
   provisioner "local-exec" {
     command = "echo instance created with ip ${aws_instance.public_instance.public_ip} >> instance_data.txt"
