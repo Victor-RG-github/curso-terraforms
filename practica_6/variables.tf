@@ -29,3 +29,8 @@ variable "sg_ingress_cidr" {
   description = "CDIR for ssh ingress traffic"
   type        = string
 }
+
+variable "ec2_specs" {
+  description = "EC2 instance parameters"
+  type        = map(string)
+}
