@@ -34,3 +34,9 @@ variable "ec2_specs" {
   description = "EC2 instance parameters"
   type        = map(string)
 }
+
+variable "deploy_conditional" {
+  description = "Conditional"
+  type        = bool
+  default     = false
+}

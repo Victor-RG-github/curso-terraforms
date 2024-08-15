@@ -19,3 +19,5 @@ ec2_specs = {
   "ami"           = "ami-02af70169146bbdd3"
   "instance_type" = "t3.micro"
 }
+
+deploy_conditional = false
