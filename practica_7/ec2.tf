@@ -13,7 +13,7 @@ resource "aws_instance" "conditional_instance" {
   key_name               = data.aws_key_pair.key.key_name
   vpc_security_group_ids = [aws_security_group.sg_public_instance.id]
   tags = {
-    "Name" : "conditional_instance"
+    "Name" : "conditional_instance-${local.sufix}"
   }
 }
 
@@ -27,7 +27,7 @@ resource "aws_instance" "public_instance" {
   vpc_security_group_ids = [aws_security_group.sg_public_instance.id]
   tags = {
     //"Name" : var.instances[count.index]
-    "Name" : each.value
+    "Name" : "${each.value}-${local.sufix}"
   }
   # tags = {
   #   Name = "Public instance"

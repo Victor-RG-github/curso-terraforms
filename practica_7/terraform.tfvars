@@ -11,6 +11,8 @@ tags = {
   "cloud"       = "aws"
   "IAC"         = "terraform"
   "IAC_version" = "1.3.10"
+  "project"     = "cerberus"
+  "region"      = "eu-north-1"
 }
 
 sg_ingress_cidr = "0.0.0.0/0"

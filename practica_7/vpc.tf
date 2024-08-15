@@ -1,7 +1,7 @@
 resource "aws_vpc" "vpc_stockholm" {
   cidr_block = var.stockholm_cidr
   tags = {
-    Name = "vpc_stockholm"
+    Name = "vpc_stockholm-${local.sufix}"
   }
 }
 
@@ -10,7 +10,7 @@ resource "aws_subnet" "public_subnet" {
   cidr_block              = var.subnets[0]
   map_public_ip_on_launch = true
   tags = {
-    Name = "public_subnet"
+    Name = "public_subnet-${local.sufix}"
   }
 }
 
@@ -19,7 +19,7 @@ resource "aws_subnet" "private_subnet" {
   cidr_block              = var.subnets[1]
   map_public_ip_on_launch = false
   tags = {
-    Name = "private_subnet"
+    Name = "private_subnet-${local.sufix}"
   }
   depends_on = [aws_subnet.public_subnet]
 }
@@ -28,7 +28,7 @@ resource "aws_internet_gateway" "igw_stockholm" {
   vpc_id = aws_vpc.vpc_stockholm.id
 
   tags = {
-    Name = "igw stockholm"
+    Name = "igw stockholm-${local.sufix}"
   }
 }
 
@@ -41,7 +41,7 @@ resource "aws_route_table" "public_crt" {
   }
 
   tags = {
-    Name = "public_crt"
+    Name = "public_crt-${local.sufix}"
   }
 }
 
@@ -56,7 +56,7 @@ resource "aws_security_group" "sg_public_instance" {
   vpc_id      = aws_vpc.vpc_stockholm.id
 
   tags = {
-    Name = "sg_public_instance"
+    Name = "sg_public_instance-${local.sufix}"
   }
 
   ingress = [{
