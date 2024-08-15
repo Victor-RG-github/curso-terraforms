@@ -24,3 +24,8 @@ variable "tags" {
   description = "Variables del proyecto"
   type        = map(string)
 }
+
+variable "sg_ingress_cidr" {
+  description = "CDIR for ssh ingress traffic"
+  type        = string
+}

@@ -12,3 +12,5 @@ tags = {
   "IAC"         = "terraform"
   "IAC_version" = "1.3.10"
 }
+
+sg_ingress_cidr = "0.0.0.0/0"
